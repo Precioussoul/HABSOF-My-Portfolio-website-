@@ -60,6 +60,21 @@ html {
   scroll-behavior: smooth;
 }
 
+body::-webkit-scrollbar {
+  width: 1em;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(32, 32, 32);
+  box-shadow: var(--shadow-1);
+  border: 1px solid #343434;
+  border-radius: 30px;
+}
+
 body {
   background: #212428;
   font-size: 16px;
@@ -67,24 +82,20 @@ body {
   width: 100%;
   height: 100vh;
 }
-#scroll-container {
-  width: auto;
-  height: 100vh;
-  overflow: auto;
-  margin: 0;
-}
-.main-header.fixed {
+
+.main-header {
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
   background-color: #212428de;
   box-shadow: var(--shadow-1);
   backdrop-filter: blur(1rem);
   z-index: 99;
+  transition: all 0.4s;
 }
 
 /* utilities */
+
 .container {
   width: 100%;
   padding-right: 15px;
@@ -159,7 +170,7 @@ a {
 .nav-link:hover {
   color: var(--color-body-light);
 }
-.nav-link.active {
+.nav-link:active {
   font-weight: bold;
   color: var(--color-body-light);
 }
@@ -222,7 +233,8 @@ a {
   background-color: rgba(0, 0, 0, 0.8);
   visibility: hidden;
   opacity: 0;
-  transition: all 0.4s;
+  transition-duration: 1s;
+  overflow: hidden;
 }
 
 .mobile-navigation.open {
@@ -235,12 +247,12 @@ a {
   background-color: #191b1e;
   z-index: 9;
   padding: 1rem;
-  overflow-y: auto;
+  overflow-y: scroll;
   transition: all 0.4s;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
+  height: 100vh;
   opacity: 1;
   color: var(--color-lightn);
 }

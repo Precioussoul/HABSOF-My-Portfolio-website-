@@ -48,82 +48,6 @@ var swiper = new Swiper(".mySwiper", {
   speed: 900,
 });
 
-// var Scrollbar = window.Scrollbar;
-// Scrollbar.init(document.querySelector("#scroll-container"), {
-//   damping: 0.05,
-//   renderByPixel: true,
-//   continuousScrolling: true,
-//   alwaysShowTracks: true,
-// });
-
-function smoothScrollbar() {
-  var isMobile =
-    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Nokia|Opera Mini/i.test(
-      navigator.userAgent
-    )
-      ? true
-      : false;
-
-  if (!isMobile) {
-    gsap.registerPlugin(ScrollTrigger);
-    let bodyScrollBar = Scrollbar.init(
-      document.querySelector("#scroll-container"),
-      {
-        damping: 0.03,
-        renderByPixel: true,
-        continuousScrolling: true,
-        alwaysShowTracks: true,
-      }
-    );
-
-    ScrollTrigger.scrollerProxy("#scroll-container", {
-      scrollTop(value) {
-        if (arguments.length) {
-          bodyScrollBar.scrollTop = value;
-        }
-        return bodyScrollBar.scrollTop;
-      },
-    });
-    bodyScrollBar.addListener(ScrollTrigger.update);
-
-    const menu = document.querySelector(".nav-list");
-
-    menu.querySelectorAll(".nav-link").forEach(function (link) {
-      link.addEventListener("click", function (e) {
-        e.preventDefault();
-
-        const target = link.getAttribute("href");
-
-        if (
-          document.querySelector(target).classList.contains("features__link")
-        ) {
-          bodyScrollBar.scrollTo(
-            0,
-            document.querySelector(target).parentElement.offsetTop,
-            1000
-          );
-        } else {
-          bodyScrollBar.scrollTo(
-            0,
-            document.querySelector(target).offsetTop,
-            1000
-          );
-        }
-      });
-    });
-
-    const slider = document.querySelector("#Contact");
-
-    var scrollToHere = slider.offsetTop;
-
-    document.querySelector(".contact-me").addEventListener("click", () => {
-      bodyScrollBar.scrollTo(0, scrollToHere, 1000);
-    });
-  }
-}
-
-smoothScrollbar();
-
 const clickout = document.querySelector(".mobile-navigation");
 const hamburgerMenu = document.querySelector(".hamburger-menu");
 const mobileNavlink = document.querySelectorAll(".mobile-menu__nav-link");
@@ -142,14 +66,6 @@ mobileNavlink.forEach((mobLink) => {
   });
 });
 
-const header = document.getElementById("header");
-const bodyInner = document.querySelector(".body-inner");
-
-if (header.classList.contains("main-header")) {
-  bodyInner.prepend(header);
-  console.log("yes , we have it");
-}
-
 const Navlinks = document.querySelectorAll(".nav-link");
 
 Navlinks.forEach((navLink) => {
@@ -160,13 +76,15 @@ Navlinks.forEach((navLink) => {
   });
 });
 
-let scrollbar = Scrollbar.init(document.querySelector("#scroll-container"), {
-  damping: 0.03,
-  renderByPixel: true,
-  continuousScrolling: true,
-  alwaysShowTracks: true,
-});
+var prevScrollpos = window.pageYOffset;
+console.log(prevScrollpos, "pos");
 
-scrollbar.addListener((status) => {
-  //
+window.addEventListener("scroll", () => {
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("header").style.top = "0";
+  } else {
+    document.getElementById("header").style.top = "-100px";
+  }
+  prevScrollpos = currentScrollPos;
 });
