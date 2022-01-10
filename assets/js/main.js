@@ -167,3 +167,33 @@ function highlightMobile(element) {
 
   element.classList.add("active");
 }
+
+const Titles = [
+  "Front-End Developer",
+  "Software Engineer",
+  "Content Developer",
+];
+let count = 0;
+let index = 0;
+let currentTitle = "";
+let title = "";
+
+function TypingText() {
+  if (count === Titles.length) {
+    count = 0;
+  }
+
+  currentTitle = Titles[count];
+  title = currentTitle.slice(0, ++index);
+
+  document
+    .querySelectorAll(".typing-text")
+    .forEach((typing) => (typing.textContent = title));
+
+  if (title.length === currentTitle.length) {
+    count++;
+    index = 0;
+  }
+  setTimeout(TypingText, 150);
+}
+TypingText();

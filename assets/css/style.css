@@ -114,7 +114,7 @@ html::after {
   background-color: #212428de;
   box-shadow: var(--shadow-1);
   backdrop-filter: blur(1rem);
-  z-index: 99;
+  z-index: 15;
   transition: all 0.4s;
 }
 
@@ -188,7 +188,8 @@ a {
   font-size: 0.9rem;
   font-weight: 400;
 }
-.nav-link:not(:active) {
+.nav-link:not(:active),
+.mobile-menu__nav-link {
   color: var(--color-body);
 }
 .nav-link:hover {
@@ -411,9 +412,10 @@ a {
   color: var(--color-body-light);
 }
 .hero__author-title {
-  font-size: 1.2rem;
-  color: var(--color-body-light);
-  font-weight: bold;
+  display: flex;
+}
+.hero__author-title > * {
+  font-size: 1.7rem;
 }
 .padding-20 {
   padding: 1rem 0;
@@ -432,6 +434,30 @@ a {
 .hero__author-summary {
   width: 80%;
   line-height: 2;
+}
+
+.typing-text {
+  color: var(--color-body-light);
+  position: relative;
+  margin-left: 5px;
+}
+.typing-text::after {
+  position: absolute;
+  content: "";
+  right: -0.5rem;
+  height: 1.55rem;
+  width: 0.2rem;
+  background-color: var(--color-body);
+  animation: Blink 0.5s infinite ease-in;
+}
+
+@keyframes Blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .skill-list {
@@ -1829,9 +1855,9 @@ select:-webkit-autofill:focus {
     font-size: 0.8rem;
   }
   .mobile-menu__author-title {
-    font-size: 0.8rem;
-    font-weight: bold;
+    display: flex;
   }
+
   .mobile-menu__nav-item {
     font-size: 0.9rem;
   }
@@ -1888,7 +1914,7 @@ select:-webkit-autofill:focus {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 10;
+  z-index: 20;
   border-radius: 30px;
   width: 0%;
 }
