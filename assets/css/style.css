@@ -1594,7 +1594,7 @@ select:-webkit-autofill:focus {
 
 @media only screen and (max-width: 575px) {
   .container {
-    padding: 0;
+    padding: 0 1rem;
     margin: 0;
     width: 100%;
   }
@@ -1609,7 +1609,6 @@ select:-webkit-autofill:focus {
   }
   .hero__text {
     order: 2;
-    padding: 0 0.5rem;
   }
   .hero__image-box {
     width: 100%;
