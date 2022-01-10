@@ -1594,9 +1594,9 @@ select:-webkit-autofill:focus {
 
 @media only screen and (max-width: 575px) {
   .container {
-    padding: 0 1rem;
-    margin: 0;
-    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+    width: 94%;
   }
   .hero__grid {
     grid-template-columns: 1fr;
