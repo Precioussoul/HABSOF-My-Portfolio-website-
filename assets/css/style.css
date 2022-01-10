@@ -1744,7 +1744,7 @@ select:-webkit-autofill:focus {
     opacity: 0;
   }
   .resumee__item--sub-heading {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   .resumee__item-icon {
     font-size: 1rem;
@@ -1754,6 +1754,9 @@ select:-webkit-autofill:focus {
   }
   .resumee__item--details li {
     font-size: 0.8rem;
+  }
+  .resumee__heading-title {
+    font-size: 1.5rem;
   }
   .contact__header-title {
     font-size: 1.6rem;
@@ -1903,9 +1906,6 @@ select:-webkit-autofill:focus {
   font-size: 2rem;
   border-radius: 50%;
   z-index: 44;
-  box-shadow: 10px 10px 120px -22px rgba(0, 0, 0, 0.59);
-  -webkit-box-shadow: 10px 10px 120px -22px rgba(0, 0, 0, 0.59);
-  -moz-box-shadow: 10px 10px 120px -22px rgba(0, 0, 0, 0.59);
 }
 
 .progress-bar {
