@@ -78,6 +78,8 @@ Navlinks.forEach((navLink) => {
 
 var prevScrollpos = window.pageYOffset;
 console.log(prevScrollpos, "pos");
+var mybutton = document.querySelector(".back-to-top");
+mybutton.addEventListener("click", topFunction);
 
 window.addEventListener("scroll", () => {
   var currentScrollPos = window.pageYOffset;
@@ -87,4 +89,81 @@ window.addEventListener("scroll", () => {
     document.getElementById("header").style.top = "-100px";
   }
   prevScrollpos = currentScrollPos;
+
+  scrollFunction();
+  pageProgressBarFunc();
 });
+
+function scrollFunction() {
+  if (
+    document.body.scrollTop > 500 ||
+    document.documentElement.scrollTop > 500
+  ) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+
+  document.body.scrollIntoView({
+    behavior: "smooth",
+  });
+}
+
+function pageProgressBarFunc() {
+  const scrollContainer = () => {
+    return document.documentElement || document.body;
+  };
+
+  const pageProgressBar = document.querySelector(".progress-bar");
+
+  const scrolledPercentage =
+    (scrollContainer().scrollTop /
+      (scrollContainer().scrollHeight - scrollContainer().clientHeight)) *
+    100;
+
+  console.log(scrolledPercentage, "scroll");
+  pageProgressBar.style.width = `${scrolledPercentage}%`;
+
+  if (scrollContainer().scrollTop > showOnPx) {
+    backToTopButton.classList.remove("hidden");
+  } else {
+    backToTopButton.classList.add("hidden");
+  }
+}
+
+var naavy = document.querySelectorAll(".nav-link");
+var naavyMobile = document.querySelectorAll(".mobile-menu__nav-link");
+var length = naavy.length;
+var lengthMobile = naavyMobile.length;
+
+for (var i = 0; i < length; i++) {
+  naavy[i].addEventListener("click", function () {
+    highlight(this);
+  });
+}
+for (var i = 0; i < lengthMobile; i++) {
+  naavyMobile[i].addEventListener("click", function () {
+    highlightMobile(this);
+  });
+}
+
+function highlight(element) {
+  for (var i = 0; i < length; i++) {
+    naavy[i].classList.remove("active");
+  }
+
+  element.classList.add("active");
+}
+
+function highlightMobile(element) {
+  for (var i = 0; i < length; i++) {
+    naavyMobile[i].classList.remove("active");
+  }
+
+  element.classList.add("active");
+}

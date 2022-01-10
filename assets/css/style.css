@@ -51,13 +51,18 @@
   --border-bottom-light: 0.15rem solid #181a1d;
 }
 
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 html {
   scroll-behavior: smooth;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {
@@ -79,10 +84,29 @@ body {
   background: #212428;
   font-size: 16px;
   font-family: var(--font-primary);
-  width: 100%;
-  height: 100vh;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.2;
+}
+body::before,
+body::after {
+  overflow-x: hidden;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+html::before,
+html::after {
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
 }
 
+.container::after,
+.container::before {
+  padding: 0;
+  margin: 0;
+}
 .main-header {
   position: fixed;
   top: 0;
@@ -134,9 +158,9 @@ body {
 }
 
 /* header  */
-header {
+/* header {
   padding: 0 4rem;
-}
+} */
 
 /* navigation desktop */
 .navbar {
@@ -170,14 +194,20 @@ a {
 .nav-link:hover {
   color: var(--color-body-light);
 }
-.nav-link:active {
+.nav-link.active {
   font-weight: bold;
+  color: var(--color-body-light);
+}
+.mobile-menu__nav-link.active {
+  font-weight: bold;
+  font-style: italic;
   color: var(--color-body-light);
 }
 .nav-logo {
   display: flex;
   align-items: center;
   padding: 0.5rem 0;
+  padding-left: 1rem;
 }
 .logo {
   width: 3.5rem;
@@ -204,7 +234,7 @@ a {
   border: 0;
   font-size: 2rem;
   border-radius: 1rem;
-  padding: 1rem;
+  padding-right: 2rem;
   background-color: transparent;
   color: var(--color-primary);
   display: none;
@@ -383,6 +413,7 @@ a {
 .hero__author-title {
   font-size: 1.2rem;
   color: var(--color-body-light);
+  font-weight: bold;
 }
 .padding-20 {
   padding: 1rem 0;
@@ -445,7 +476,10 @@ a {
   padding: 2rem;
   box-shadow: var(--shadow-2);
 }
-
+.hero__main-image {
+  width: 95%;
+  margin: 0 auto;
+}
 .hero__image {
   width: 100%;
   height: 100%;
@@ -1387,6 +1421,9 @@ select:-webkit-autofill:focus {
 /* @ max width :767 */
 
 @media only screen and (min-width: 991px) and (max-width: 1199px) {
+  .main-header {
+    padding: 0 1.5rem;
+  }
   .hero__author-name {
     font-size: 2.3rem;
     line-height: 1.6;
@@ -1530,8 +1567,10 @@ select:-webkit-autofill:focus {
 /* @media 575px */
 
 @media only screen and (max-width: 575px) {
-  header {
-    padding: 0 1rem;
+  .container {
+    padding: 0;
+    margin: 0;
+    width: 100%;
   }
   .hero__grid {
     grid-template-columns: 1fr;
@@ -1544,6 +1583,7 @@ select:-webkit-autofill:focus {
   }
   .hero__text {
     order: 2;
+    padding: 0 0.5rem;
   }
   .hero__image-box {
     width: 100%;
@@ -1696,14 +1736,27 @@ select:-webkit-autofill:focus {
   .features__header-title,
   .portfolio__header-title,
   .blog__header-title,
-  .testimonial__header-title {
-    font-size: 2.2rem;
+  .testimonial__header-title,
+  .resumee__header-title {
+    font-size: 2rem;
   }
   .contact__header-title {
     font-size: 1.8rem;
   }
+  .contact__intro-heading-title {
+    font-size: 1.9rem;
+  }
+  .contact__intro-heading-subtitle .rn-highlight {
+    display: block;
+  }
+  .contact__intro-heading-subtitle {
+    font-size: 0.8rem;
+  }
   .contact__intro-box {
     padding: 0.8rem;
+  }
+  .contact__intro-job {
+    line-height: 2;
   }
   .contact__intro-channel-list {
     list-style: none;
@@ -1797,8 +1850,14 @@ select:-webkit-autofill:focus {
   .hero-section {
     padding-top: 14rem;
   }
+  .main-header {
+    padding: 0 5rem;
+  }
 }
 @media only screen and (min-width: 1200px) and (max-width: 1449px) {
+  .main-header {
+    padding: 0 2rem;
+  }
   .hero-section {
     padding-top: 9rem;
   }
@@ -1808,4 +1867,28 @@ select:-webkit-autofill:focus {
   text-align: center;
   font-size: 0.7rem;
   color: var(--color-body);
+}
+.back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 3rem;
+  right: 1rem;
+  padding: 1.3rem;
+  font-size: 2rem;
+  border-radius: 50%;
+  z-index: 44;
+  box-shadow: 10px 10px 120px -22px rgba(0, 0, 0, 0.59);
+  -webkit-box-shadow: 10px 10px 120px -22px rgba(0, 0, 0, 0.59);
+  -moz-box-shadow: 10px 10px 120px -22px rgba(0, 0, 0, 0.59);
+}
+
+.progress-bar {
+  height: 0.5rem;
+  background: var(--color-body-light);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  border-radius: 30px;
+  width: 0%;
 }

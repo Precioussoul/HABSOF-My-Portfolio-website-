@@ -51,7 +51,7 @@
         <button class="hamburger-menu"><i class="fas fa-bars"></i></button>
         <ul class="nav-list">
           <li class="nav-item">
-            <a href="#Home" class="nav-link" onclick="">Home</a>
+            <a href="#Home" class="nav-link active" onclick="">Home</a>
           </li>
           <li class="nav-item">
             <a href="#features" class="nav-link features__link">Features</a>
@@ -111,7 +111,7 @@
 
         <ul class="mobile-menu__nav-list">
           <li class="mobile-menu__nav-item">
-            <a href="#Home" class="mobile-menu__nav-link">Home</a>
+            <a href="#Home" class="mobile-menu__nav-link active">Home</a>
           </li>
           <li class="mobile-menu__nav-item">
             <a href="#features" class="mobile-menu__nav-link">Features</a>
@@ -602,12 +602,6 @@
                     src="assets/images/portfolio/BabyShiba_thumbnail.jpg"
                     alt="Portfolio image"
                   />
-                  <div class="project-info">
-                    <ul>
-                      <li>Client: Ajax Concept</li>
-                      <li>Client: Ajax Concept</li>
-                    </ul>
-                  </div>
                 </a>
               </div>
               <div class="portfolio__details">
@@ -2058,10 +2052,16 @@
 
     <!-- #################################################### project and blog modal -->
 
+    <button class="back-to-top btn-secondary">
+      <i class="fas fa-arrow-alt-circle-up"></i>
+    </button>
+    <div class="progress-bar" />
     <!-- smmooth scroll ends here -->
 
     <script>
-      AOS.init();
+      AOS.init({
+        once: "true",
+      });
     </script>
     <!-- JS ============================================ -->
 
