@@ -1217,7 +1217,7 @@ a {
 
 /* ########################### contact section */
 .contact-section {
-  margin-bottom: 2rem;
+  padding-bottom: 2rem;
 }
 .contact__grid {
   display: grid;
@@ -1657,7 +1657,7 @@ select:-webkit-autofill:focus {
   .contact__grid,
   .blog__grid,
   .testimonial__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 100%;
     grid-row-gap: 3rem;
   }
   .Summary__author-image {
@@ -1786,6 +1786,9 @@ select:-webkit-autofill:focus {
   .contact__intro-job {
     line-height: 2;
   }
+  .contact__form {
+    padding: 2rem 0.5rem;
+  }
   .contact__intro-channel-list {
     list-style: none;
   }
@@ -1890,6 +1893,8 @@ select:-webkit-autofill:focus {
     padding-top: 9rem;
   }
 }
+@media only screen and (max-width: 380px) {
+}
 
 .sm-prjt {
   text-align: center;
@@ -1916,4 +1921,14 @@ select:-webkit-autofill:focus {
   z-index: 20;
   border-radius: 30px;
   width: 0%;
+}
+
+.main-header,
+.testimonial__section,
+.portfolio-section,
+.resumee-section,
+.hero-section,
+.contact-section,
+.features-section {
+  overflow: hidden;
 }
