@@ -168,11 +168,7 @@ function highlightMobile(element) {
   element.classList.add("active");
 }
 
-const Titles = [
-  "Front-End Developer",
-  "Software Engineer",
-  "Content Developer",
-];
+const Titles = ["Software Engineer", "Full-Stack Developer", "Cloud Developer"];
 let count = 0;
 let index = 0;
 let currentTitle = "";
