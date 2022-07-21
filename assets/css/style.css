@@ -891,11 +891,11 @@ a {
 .resumee__item--inner::after {
   content: "";
   position: absolute;
-  width: 0.8rem;
-  height: 0.8rem;
+  width: 1rem;
+  height: 1rem;
   border-radius: 50%;
   background-color: var(--color-body-white);
-  bottom: 47.33%;
+  bottom: 46.5%;
   border: 0.3rem solid #191b1e;
   left: -2.62rem;
 }
@@ -1828,6 +1828,9 @@ select:-webkit-autofill:focus {
   }
   .resumee__item--details li {
     font-size: 0.8rem;
+  }
+  .resumee__item--inner::after {
+    bottom: 47.5%;
   }
   .resumee__heading-title {
     font-size: 1.3rem;
