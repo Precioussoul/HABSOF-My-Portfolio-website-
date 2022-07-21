@@ -471,7 +471,18 @@
                   <img
                     src="assets/images/portfolio/hbs drive.png"
                     alt="Portfolio image"
+                    class="portfolio__image"
                 /></a>
+
+                <div class="portfolio__text-detail">
+                  <p class="portfolio-text">
+                    A Full-Stack Cloud Storage web application that work similar
+                    to Google Drive. User can upload files, delete, starred
+                    favorites , download etc. Built with React,
+                    Firebase(Authentication, Cloud Storage, Firestore Database
+                    etc.),Material UI and SASS
+                  </p>
+                </div>
               </div>
               <div class="portfolio__details">
                 <div class="project__category">
@@ -519,8 +530,17 @@
                   ><img
                     src="assets/images/portfolio/WouldRatherGame_thumbnail.jpg"
                     alt="Portfolio image"
+                    class="portfolio__image"
                   />
                 </a>
+                <div class="portfolio__text-detail">
+                  <p class="portfolio-text">
+                    A Poll Game that allow users to answer questions, create
+                    poll questions and see leaderboard of users with most
+                    answered questions. <br />
+                    Built with React, Redux, Semantic UI and Fake JSON API.
+                  </p>
+                </div>
               </div>
               <div class="portfolio__details">
                 <div class="project__category">
@@ -570,8 +590,19 @@
                   <img
                     src="assets/images/portfolio/Fitness-Tracker.jpg"
                     alt="Portfolio image"
+                    class="portfolio__image"
                   />
                 </a>
+                <div class="portfolio__text-detail">
+                  <p class="portfolio-text">
+                    A Fitness Tracker Mobile application that help fitness
+                    enthusiast to keep track of their daily exercise with
+                    historys. The app also have geo-spartial location feature
+                    enabled which tell users the direction they are heading to.
+                    Built with React Native, React Navigation, Async Storage
+                    etc. and other native features.
+                  </p>
+                </div>
               </div>
               <div class="portfolio__details">
                 <div class="project__category">
@@ -619,8 +650,18 @@
                   <img
                     src="assets/images/portfolio/3rdAugust.jpg"
                     alt="Portfolio image"
+                    class="portfolio__image"
                   />
                 </a>
+                <div class="portfolio__text-detail">
+                  <p class="portfolio-text">
+                    A Muiltipurpose Company websites grouped together with a
+                    single codebase. Three companies websites linked together as
+                    demanded by the clients to save costs. Built with WordPress,
+                    Custom CSS, Javascript, Elementor pro page builder and
+                    adds-on plugins.
+                  </p>
+                </div>
               </div>
               <div class="portfolio__details">
                 <div class="project__category">
@@ -631,8 +672,8 @@
                     >Website-Design</a
                   >
                   <span class="project__stack-icon">
-                    <i class="fab fa-html5"></i>
-                    <i class="fab fa-bootstrap"></i>
+                    <i class="fab fa-wordpress"></i>
+                    <i class="fab fa-css3"></i>
                     <i class="fab fa-js-square"></i>
                   </span>
                 </div>
@@ -668,8 +709,17 @@
                   ><img
                     src="assets/images/portfolio/MyRead_thumbnail.jpg"
                     alt="Portfolio image"
+                    class="portfolio__image"
                   />
                 </a>
+                <div class="portfolio__text-detail">
+                  <p class="portfolio-text">
+                    A web application that keep you updated of list of books ,
+                    you can search for books, filter catalog options (to read
+                    now, Currently reading and will read). Bult with React, CSS,
+                    and Use Book API to fetch data .
+                  </p>
+                </div>
               </div>
               <div class="portfolio__details">
                 <div class="project__category">
@@ -722,8 +772,18 @@
                   <img
                     src="assets/images/portfolio/mafoundation.jpg"
                     alt="Portfolio image"
+                    class="portfolio__image"
                   />
                 </a>
+                <div class="portfolio__text-detail">
+                  <p class="portfolio-text">
+                    A Charity Foundation website built with the purpose of
+                    showcasing their work to partners through online presence.
+                    visitor can also make donations. Built with WordPress,
+                    Custom SVG, Custom CSS, Elementor Page Builder and other
+                    Add-ons Plugins.
+                  </p>
+                </div>
               </div>
               <div class="portfolio__details">
                 <div class="project__category">
@@ -1983,18 +2043,7 @@
                       id="yourName"
                       class="form-control"
                       name="name"
-                      required
-                    />
-                  </div>
-                  <div class="input-group phone-column">
-                    <label for="phoneNumber" class="form-label"
-                      >Phone Number</label
-                    >
-                    <input
-                      type="tel"
-                      id="phoneNumber"
-                      class="form-control"
-                      name="phone number"
+                      placeholder=" Enter Your name"
                       required
                     />
                   </div>
@@ -2006,6 +2055,7 @@
                     id="Email"
                     class="form-control"
                     name="email"
+                    placeholder="Enter Your Email"
                     required
                   />
                 </div>
@@ -2016,6 +2066,7 @@
                     id="subject"
                     class="form-control"
                     name="subject"
+                    placeholder="Tell me what's on your mind 🥰"
                     required
                   />
                 </div>
@@ -2024,6 +2075,7 @@
                   <textarea
                     name="message"
                     id="message"
+                    placeholder="Your message"
                     class="form-control__textarea"
                     required
                   ></textarea>
@@ -2064,21 +2116,25 @@
             </a>
           </div>
           <div class="footer__copyright">
-            <h2 class="made-withLove">
-              Made with
-              <span class="footer-icon"><i class="fas fa-heart"></i></span>
-              by Sofiyullah Abdullah.
-            </h2>
+            <div class="footer__author-info">
+              <h2 class="made-withLove">
+                Made with
+                <span class="footer-icon"><i class="fas fa-heart"></i></span>
+                by Sofiyullah Abdullah.
+              </h2>
 
-            <p class="footer__copyright-text upt">
-              This website is scheduled for regular update...
-            </p>
-            <p class="footer__copyright-text">
-              &copy; 2021, All Right-Reserved by Codedrill Coorperation
-            </p>
-            <p class="footer__copyright-text">
-              &copy; Powered by Codedrill Coorperation.
-            </p>
+              <p class="footer__copyright-text upt">
+                This website is scheduled for regular update...
+              </p>
+            </div>
+            <div class="footer__copyright-plane">
+              <p class="footer__copyright-text">
+                &copy; 2021, All Right-Reserved by Codedrill Coorperation
+              </p>
+              <p class="footer__copyright-text">
+                &copy; Powered by Codedrill Coorperation.
+              </p>
+            </div>
           </div>
         </div>
         <!-- footer-container -->
