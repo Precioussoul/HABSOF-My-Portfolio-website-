@@ -1985,7 +1985,12 @@
             <!-- contact intro box column 1 ends here -->
             <div class="contact__form-box">
               <!--  -->
-              <form action="POST" data-netlify="true" class="contact__form">
+              <form
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                class="contact__form"
+              >
                 <div class="form-group">
                   <div class="input-group name-column">
                     <label for="yourName" class="form-label">Your name</label>
@@ -1993,6 +1998,7 @@
                       type="text"
                       id="yourName"
                       class="form-control"
+                      name="name"
                       required
                     />
                   </div>
@@ -2004,6 +2010,7 @@
                       type="tel"
                       id="phoneNumber"
                       class="form-control"
+                      name="phone number"
                       required
                     />
                   </div>
@@ -2014,6 +2021,7 @@
                     type="email"
                     id="Email"
                     class="form-control"
+                    name="email"
                     required
                   />
                 </div>
@@ -2023,13 +2031,14 @@
                     type="text"
                     id="subject"
                     class="form-control"
+                    name="subject"
                     required
                   />
                 </div>
                 <div class="input-group">
                   <label for="message" class="form-label">Your Message</label>
                   <textarea
-                    name=""
+                    name="message"
                     id="message"
                     class="form-control__textarea"
                     required
