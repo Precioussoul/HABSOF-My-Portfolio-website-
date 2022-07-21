@@ -266,7 +266,7 @@ a {
   font-family: var(--font-primary);
   font-size: 1.2rem;
   font-weight: 600;
-  color: #ddd;
+  color: var(--color-body);
 }
 /* Mobile menu navigation  */
 
