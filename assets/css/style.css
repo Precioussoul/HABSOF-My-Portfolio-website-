@@ -438,6 +438,7 @@ a {
 .padding-20 {
   padding: 1rem 0;
 }
+
 .hero__author-skill-text,
 .hero__author-find-me {
   font-size: 0.8rem;
@@ -590,6 +591,7 @@ a {
   box-shadow: var(--shadow-1);
   padding: 1rem;
   transition: all 0.4s;
+  border-radius: 0.8rem;
 }
 .features__item:hover {
   background: var(--bg-gradient-hover);
@@ -676,6 +678,7 @@ a {
   transition: all 0.4s;
   display: flex;
   flex-direction: column;
+  border-radius: 0.8rem;
 }
 .portfolio__item:hover,
 .blog__item:hover {
@@ -853,16 +856,16 @@ a {
 .resumee__item--inner::after {
   content: "";
   position: absolute;
-  width: 0.6rem;
-  height: 0.6rem;
+  width: 0.8rem;
+  height: 0.8rem;
   border-radius: 50%;
   background-color: var(--color-body-white);
-  bottom: 46%;
-  border: 0.4rem solid #191b1e;
-  left: -3rem;
+  bottom: 47.33%;
+  border: 0.3rem solid #191b1e;
+  left: -2.62rem;
 }
 .resumee__item:hover .resumee__item--inner::after {
-  background-color: var(--color-primary);
+  background-color: var(--color-highlighted);
 }
 .resumee__item:hover {
   background: var(--bg-gradient-hover);
@@ -918,6 +921,8 @@ a {
   margin: 2rem 0;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .skill-name {
@@ -931,37 +936,6 @@ a {
   padding: 1rem 0;
 }
 
-.progress {
-  width: 100%;
-  height: 0.8rem;
-  border-radius: 2rem;
-  display: flex;
-  align-items: center;
-  box-shadow: inset 8px 8px 16px #00000075, inset -8px -8px 16px #383e4575;
-}
-.progress-done {
-  width: 0%;
-  background-color: var(--color-primary);
-  height: 50%;
-  border-radius: 2rem;
-  position: relative;
-  opacity: 0;
-  transition: width 1s;
-}
-.progress-done::before {
-  content: attr(value) "%";
-  position: absolute;
-  top: -1.5rem;
-  right: 0rem;
-  font-size: 1rem;
-  text-transform: uppercase;
-  color: #c3cedd;
-  letter-spacing: 0.1rem;
-  font-weight: 400;
-}
-
-/* .progress-done__1::before {
-} */
 /* prof grid */
 .prof__grid {
   display: grid;
@@ -1108,6 +1082,7 @@ a {
   background: var(--background-color-1);
   display: flex;
   flex-direction: column;
+  border-radius: 0.8rem;
 }
 .testimonial__author-image {
   width: 100%;
@@ -1159,6 +1134,7 @@ a {
 .testimonial__info-details {
   position: relative;
   z-index: 2;
+  border-radius: 0.8rem;
 }
 .testimonial__info-details::before {
   content: "";
@@ -1592,7 +1568,9 @@ select:-webkit-autofill:focus {
     grid-template-rows: auto;
     grid-row-gap: 3rem;
   }
-
+  .hero__author-summary {
+    width: 100%;
+  }
   .hero__image {
     order: 1;
   }
@@ -1652,6 +1630,9 @@ select:-webkit-autofill:focus {
   .hero__main-image {
     order: 1;
   }
+  .skill-list {
+    justify-content: space-around;
+  }
   .hero__text {
     order: 2;
   }
@@ -1664,6 +1645,9 @@ select:-webkit-autofill:focus {
   .hero__author-name > .pka-highlight {
     display: block;
     line-height: 1.5;
+  }
+  .hero__author-skill {
+    width: 100%;
   }
 
   .welcome-title {
@@ -1686,12 +1670,15 @@ select:-webkit-autofill:focus {
     background-color: var(--background-color-1);
     box-shadow: var(--shadow-1);
   }
-
+  .hero__social-icon-list {
+    justify-content: space-around;
+  }
   .skill-name {
     padding-bottom: 1rem;
   }
   .hero__author-social-contact {
     margin-bottom: 1rem;
+    width: 100%;
   }
   .features__grid,
   .portfolio__grid,
@@ -1779,13 +1766,15 @@ select:-webkit-autofill:focus {
     grid-template-columns: 1fr;
     grid-row-gap: 1rem;
   }
-  .resumee__heading.column-two {
-    visibility: hidden;
-    display: none;
-    opacity: 0;
-  }
+
   .resumee__item--sub-heading {
     font-size: 1rem;
+  }
+  .resumee__skill-name {
+    font-size: 0.7rem;
+    /* padding: 0.6rem 1.2rem; */
+    padding: 0.8rem 1rem;
+    margin-right: 0.015rem;
   }
   .resumee__item-icon {
     font-size: 1rem;
@@ -1797,7 +1786,7 @@ select:-webkit-autofill:focus {
     font-size: 0.8rem;
   }
   .resumee__heading-title {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
   .contact__header-title {
     font-size: 1.6rem;
@@ -1956,7 +1945,7 @@ select:-webkit-autofill:focus {
 
 .progress-bar {
   height: 0.5rem;
-  background: var(--bg-gradient-hover);
+  background: var(--color-highlighted);
   position: fixed;
   top: 0;
   left: 0;
