@@ -193,3 +193,13 @@ function TypingText() {
   setTimeout(TypingText, 150);
 }
 TypingText();
+
+//
+
+function getFullyear() {
+  document.getElementById(
+    "copyright-year"
+  ).innerText = `${new Date().getFullYear()}   `;
+}
+
+getFullyear();
