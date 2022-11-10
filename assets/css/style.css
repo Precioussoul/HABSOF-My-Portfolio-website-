@@ -188,7 +188,6 @@ html::after {
   font-family: var(--font-secondary);
   text-transform: uppercase;
   font-size: 0.8rem;
-  padding-top: 1rem;
 }
 
 .nav-list {
@@ -545,7 +544,7 @@ a {
   font-size: 14px;
   font-weight: 500;
   border: 0 none;
-  padding: 1rem;
+  padding: 0.8rem;
   color: var(--color-light);
 }
 .btn-secondary:hover {
