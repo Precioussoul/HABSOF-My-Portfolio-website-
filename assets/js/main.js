@@ -121,9 +121,19 @@ function launchAppOnAndroidDevice() {
   console.log("clicked me");
 }
 
+function launchAppOnAppleDevice() {
+  const url = "connouapp://";
+  window.location.replace(url);
+
+  console.log("i got clicked");
+}
+
 document
   .getElementById("open-app")
   .addEventListener("click", launchAppOnAndroidDevice);
+document
+  .getElementById("open-app-ios")
+  .addEventListener("click", launchAppOnAppleDevice);
 
 function pageProgressBarFunc() {
   const scrollContainer = () => {
