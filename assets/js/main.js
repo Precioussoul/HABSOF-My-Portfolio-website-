@@ -114,6 +114,17 @@ function topFunction() {
   });
 }
 
+function launchAppOnAndroidDevice() {
+  const url =
+    "intent://connou.app/#Intent;scheme=http;package=com.connou.app;end";
+  window.location.replace(url);
+  console.log("clicked me");
+}
+
+document
+  .getElementById("open-app")
+  .addEventListener("click", launchAppOnAndroidDevice);
+
 function pageProgressBarFunc() {
   const scrollContainer = () => {
     return document.documentElement || document.body;
