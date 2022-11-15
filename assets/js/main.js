@@ -114,27 +114,6 @@ function topFunction() {
   });
 }
 
-function launchAppOnAndroidDevice() {
-  const url =
-    "intent://connou.app/#Intent;scheme=http;package=com.connou.app;end";
-  window.location.replace(url);
-  console.log("clicked me");
-}
-
-function launchAppOnAppleDevice() {
-  const url = "connouapp://";
-  window.location.replace(url);
-
-  console.log("i got clicked");
-}
-
-document
-  .getElementById("open-app")
-  .addEventListener("click", launchAppOnAndroidDevice);
-document
-  .getElementById("open-app-ios")
-  .addEventListener("click", launchAppOnAppleDevice);
-
 function pageProgressBarFunc() {
   const scrollContainer = () => {
     return document.documentElement || document.body;
